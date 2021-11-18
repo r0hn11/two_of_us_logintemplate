@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+@font-face {
+    font-family: 'COCOGOOSE Regular';
+    src: local('COCOGOOSE Regular'), url('cocogoose_trial.woff') format('woff');
+}
+
+
+
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+.flex_row{
+    display: flex;
+}
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login_sect{
+    height: 100vh;
+    background: #222;
+    z-index: 50;
+}
+#main_box{
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.3em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 2.5em 3.5em;
+}
+.overlay_login{
+    position: absolute;
+    background: #ff6f00;
+    z-index: 48;
+}
+#m1{
+    width: 210px;
+    height: 250px;
+    transform: rotate(50deg);
+    left: -120px;
+    top: -10px;
+    opacity: 10%;
+}
+#m2{
+    width: 200px;
+    height: 290px;
+    transform: rotate(-15deg);
+    left: -100px;
+    opacity: 15%;
+}
+#sub_box{
+    /* background: blueviolet; */
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    z-index: 49;
+}
+#login_ttl{
+    font-size: 2em;
+    font-family: cocogoose;
+    text-align: center;
+    color: rgb(228, 228, 228);
+}
+#login_desc{
+    text-align: center;
+    max-width: 32ch;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.18ch;
+    font-size: 0.9em;
+}
+#login_btn{
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0.6em 1.7em;
+    border-radius: 9999px;
+    border: 2.5px solid rgba(255, 255, 255, 0.15);
+    font-family: montserrat;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.2s ease-in-out;
+}
+#login_btn:hover, #login_btn:active{
+    border: 2.5px solid rgba(255, 111, 0, 0.6);
+    color: rgb(255, 255, 255);
+}
+#forgot_pw{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    font-size: 0.85em;
+    letter-spacing: 0.15ch;
+    transition: 0.3s ease-in-out;
+}
+#forgot_pw:hover, #forgot_pw:active{
+    color: rgba(255, 255, 255, 0.7);
+}

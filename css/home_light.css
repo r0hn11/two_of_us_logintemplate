@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+@font-face {
+    font-family: 'COCOGOOSE Regular';
+    src: local('COCOGOOSE Regular'), url('cocogoose_trial.woff') format('woff');
+}
+
+
+@keyframes gradient_shift {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+body{
+    background: #ddd;
+}
+
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+.flex_row{
+    display: flex;
+}
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vanish{
+    opacity: 0;
+    pointer-events: none;
+}
+.cocogoose{
+    font-family: cocogoose;
+}
+
+
+
+
+#login_sect{
+    height: 100vh;
+    background: #f9f9f9;
+    z-index: 48;
+    pointer-events: auto;
+    transition: all ease-in-out;
+}
+
+
+
+#login_msg{
+    background:rgb(223, 223, 223);
+    padding: 0.5em 1.5em;
+    border-radius: 15px;
+    position: fixed;
+    top: 10px;
+    max-width: 250px;
+    text-align: center;
+    color: rgba(34, 34, 34, 0.65);
+    font-weight: 600;
+    transition: 0.7s ease-in-out;
+    animation: gradient_shift 8s infinite alternate ease-in-out;
+}
+#msg{
+    font-size: 0.7em;
+    margin: 0.3em 0;
+}
+#fb_login,#ig_login{
+    color: #222;
+    font-size: 1.25em;
+    margin: 0 0.2em;
+    transition: 0.3s ease-in-out;
+}
+#close_login_msg{
+    cursor: pointer;
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    transition: 0.3s ease-in-out;
+}
+#close_login_msg:hover, #fb_login:hover, #ig_login:hover{
+    color: rgba(255, 71, 123, 0.9);
+}
+.close_msg{
+    transform: translateY(-150px);
+}
+
+
+
+#main_box{
+    background: #f9f9f9;
+    min-width: 400px;
+    width: 400px;
+    min-height: 240px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.1em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.186);
+    padding: 2.5em 3.5em;
+    z-index: 50;
+}
+.overlay_login{
+    position: absolute;
+    background: #ff477b;
+    z-index: 49;
+    transition: 1s ease-in-out;
+}
+#m1{
+    width: 180px;
+    height: 250px;
+    transform: rotate(50deg);
+    left: -120px;
+    top: -30px;
+    opacity: 10%;
+}
+#m2{
+    width: 180px;
+    height: 250px;
+    transform: rotate(-15deg);
+    left: -100px;
+    opacity: 15%;
+}
+#sub_box{
+    gap: 0.7em;
+    justify-content: center;
+    align-items: center;
+}
+#login_ttl{
+    font-size: 1.5em;
+    text-align: center;
+    color: #444;
+    transition: 0.5s ease-in-out;
+}
+#login_desc{
+    text-align: center;
+    max-width: 32ch;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.18ch;
+    font-size: 0.7em;
+    transition: 0.5s ease-in-out;
+}
+#login_btn{
+    cursor: pointer;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 0.6em 1.7em;
+    border-radius: 9999px;
+    border: 2.5px solid rgba(0, 0, 0, 0.15);
+    font-family: montserrat;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: rgba(68, 68, 68, 0.7);
+    transition: 0.2s ease-in-out;
+}
+#login_btn:hover, #login_btn:active{
+    border: 2.5px solid rgba(255, 71, 123, 0.6);
+    color: rgba(34, 34, 34, 1);
+}
+#forgot_pw{
+    cursor: pointer;
+    color: rgba(34, 34, 34, 0.3);
+    font-weight: 600;
+    font-size: 0.7em;
+    letter-spacing: 0.15ch;
+    transition: 0.3s ease-in-out;
+}
+#forgot_pw:hover, #forgot_pw:active{
+    color: rgba(34, 34, 34, 0.7);
+}
+
+#input_box{
+    position: absolute;
+    transform: translateY(-10px);
+    gap: 0.5em;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+}
+#username,#password{
+    width: 110px;
+    text-align: center;
+    font-family: Montserrat;
+    letter-spacing: 0.1em;
+    font-size: 0.77em;
+    outline: none;
+    border: none;
+    padding: 0.5em;
+    background: transparent;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+#arrow_box{
+    cursor: pointer;
+    padding: 1em;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+    z-index: 51;
+}
+#back_login{
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+#arrow_box:hover #back_login{
+    color: rgba(255, 71, 123, 1);
+}
+
+
+
+#note_sect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    color: rgba(255, 255, 255, 50%);
+    background: #222;
+    z-index: -1;
+    transition: 2s ease-in-out;
+}
+#note{
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.065em;
+    max-width: 41ch;
+    text-align: center;
+    opacity: 0;
+    transition: 2s ease-in-out;
+}
+#words,#love{
+    color: #fff;
+}
